@@ -89,9 +89,9 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	// 路径规则与 banner.src 相同：普通路径相对于 src，以 `/` 开头则相对于 public。
-	avatar: "assets/images/demo-avatar.jpg",
-	name: "Fumika",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	avatar: "assets/images/moyee-avatar.png",
+	name: "MOYEE",
+	bio: "兴趣使然 永远好奇 猫猫教万岁",
 	// 个人资料卡片底部的社交链接。
 	links: [
 		{

@@ -12,9 +12,9 @@ import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
 	// 浏览器标题、导航栏左侧名称，以及 SEO 标题的站点名部分。
-	title: "Fumika",
+	title: "MOYEE",
 	// 首页副标题；页面没有单独 description 时，也会作为默认 SEO 描述。
-	subtitle: "Demo Site",
+	subtitle: "Personal Site",
 
 	// 默认语言使用下划线格式（如 zh_CN）；生成路由时会自动转换为 zh-CN。
 	// 默认语言不会带语言前缀：中文首页为 `/`，中文文章为 `/posts/.../`。

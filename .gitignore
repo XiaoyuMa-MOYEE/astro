@@ -1,5 +1,5 @@
-# build output
-dist/
+# `dist/` is intentionally tracked because Cloudflare serves the prebuilt
+# static output directly from GitHub in this project's deployment workflow.
 
 # generated types
 .astro/
@@ -15,12 +15,15 @@ pnpm-debug.log*
 
 # environment variables
 .env
-.env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
 
 .vercel
+.netlify/
+.wrangler/
 
 package-lock.json
 bun.lockb
@@ -31,4 +34,10 @@ yarn.lock
 *.iml
 
 # test
-coverage
+coverage/
+playwright-report/
+test-results/
+
+# TypeScript and tool caches
+*.tsbuildinfo
+.eslintcache

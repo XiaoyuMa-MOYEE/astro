@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /_astro/
+
+Sitemap: https://astro.moyee-cat.workers.dev/sitemap-index.xml

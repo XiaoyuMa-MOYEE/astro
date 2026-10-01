@@ -1,0 +1,1 @@
+import{q as e}from"./client.Cdn-6ELZ.js";e();

@@ -161,7 +161,7 @@ export const analyticsConfig: AnalyticsConfig = {
 export const deployConfig: DeployConfig = {
 	// 正式站点完整域名，用于 canonical、RSS、站点地图和分享链接。
 	// 上线前务必替换，不要保留演示域名。
-	siteUrl: "https://fumika-demo.netlify.app",
+	siteUrl: "https://astro.moyee-cat.workers.dev",
 	// 部署在域名根目录时使用 `/`；GitHub Pages 项目站通常使用 `/仓库名/`。
 	baseUrl: "/",
 };

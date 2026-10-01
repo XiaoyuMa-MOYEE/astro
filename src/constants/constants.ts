@@ -36,7 +36,12 @@ export const ALL_LANGUAGES = [
 	"zh-TW",
 ] as const;
 
-export const DEFAULT_LANG: SupportedLang = siteConfig.lang as SupportedLang;
+// 配置使用下划线（如 `zh_CN`），生成的路由使用 BCP 47 风格的连字符（`zh-CN`）。
+// 统一默认语言与 SUPPORTED_LANG 的格式，确保默认语言页面生成在站点根路径。
+export const DEFAULT_LANG: SupportedLang = siteConfig.lang.replace(
+	"_",
+	"-",
+) as SupportedLang;
 
 const baseLangs =
 	siteConfig.supportedLangs && siteConfig.supportedLangs.length > 0

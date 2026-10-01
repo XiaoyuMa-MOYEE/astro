@@ -1,5 +1,8 @@
-# Friends
+# 友链
 		
-Edit `src/content/data/friends.json` to add sites.
+中国弧学院
 
-You can also edit `src/content/spec/friends.md` to Change text here.
+# 致谢
+
+感谢来自 Fumika 提供的Astro模板。
+

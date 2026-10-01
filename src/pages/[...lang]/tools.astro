@@ -1,0 +1,57 @@
+---
+import { getCollection, render } from "astro:content";
+import Markdown from "@components/misc/Markdown.astro";
+import { DEFAULT_LANG, SUPPORTED_LANG } from "@constants/constants";
+import I18nKey from "@i18n/i18nKey";
+import { i18n } from "@i18n/translation";
+import MainGridLayout from "@layouts/MainGridLayout.astro";
+import { normalizeLangTag } from "@utils/content-utils";
+import type { GetStaticPaths } from "astro";
+
+const { lang = DEFAULT_LANG } = Astro.props;
+
+export const getStaticPaths = (async () => {
+	return SUPPORTED_LANG.map((lang) => ({
+		params: {
+			lang: lang === DEFAULT_LANG ? undefined : lang,
+		},
+		props: { lang },
+	}));
+}) satisfies GetStaticPaths;
+
+const allSpecEntries = await getCollection("spec");
+const targetSlug = `${lang}/tools`;
+
+let toolsPost = allSpecEntries.find(
+	(entry) => normalizeLangTag(entry.id) === normalizeLangTag(targetSlug),
+);
+
+if (!toolsPost) {
+	const defaultSlug = `${DEFAULT_LANG}/tools`;
+	toolsPost = allSpecEntries.find(
+		(entry) =>
+			normalizeLangTag(entry.id) === normalizeLangTag(defaultSlug) ||
+			normalizeLangTag(entry.id) === "tools",
+	);
+}
+
+if (!toolsPost) {
+	throw new Error("Tools page content not found");
+}
+
+const { Content } = await render(toolsPost);
+---
+
+<MainGridLayout
+	title={i18n(I18nKey.tools, lang)}
+	description={i18n(I18nKey.tools, lang)}
+	lang={lang}
+>
+	<div class="flex w-full rounded-(--radius-large) overflow-hidden relative min-h-32">
+		<div class="card-base z-10 px-9 py-6 relative w-full">
+			<Markdown class="mt-2">
+				<Content />
+			</Markdown>
+		</div>
+	</div>
+</MainGridLayout>

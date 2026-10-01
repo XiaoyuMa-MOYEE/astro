@@ -5,6 +5,7 @@ export const fa: Translation = {
 	[Key.home]: "خانه",
 	[Key.about]: "درباره",
 	[Key.archive]: "بایگانی",
+	[Key.tools]: "ابزارها",
 	[Key.friends]: "دوستان",
 	[Key.search]: "جستجو",
 

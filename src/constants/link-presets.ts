@@ -16,6 +16,10 @@ export function getLinkPresets(lang?: string): Record<LinkPreset, NavBarLink> {
 			name: i18n(I18nKey.archive, lang),
 			url: "/archive/",
 		},
+		[LinkPreset.Tools]: {
+			name: i18n(I18nKey.tools, lang),
+			url: "/tools/",
+		},
 		[LinkPreset.Friends]: {
 			name: i18n(I18nKey.friends, lang),
 			url: "/friends/",

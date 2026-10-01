@@ -43,7 +43,8 @@ const friendsCollection = defineCollection({
 		siteTitle: z.string(),
 		siteDesc: z.string(),
 		siteUrl: z.url(),
-		siteIcon: z.url(),
+		// 友链图标既可使用完整网络 URL，也可使用由 `public/` 提供的站内绝对路径。
+		siteIcon: z.union([z.url(), z.string().startsWith("/")]),
 	}),
 });
 

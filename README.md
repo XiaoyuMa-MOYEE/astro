@@ -1,64 +1,106 @@
-# Astro Starter Kit: Blog
+# Fumika🐈
+![Node.js >= 22](https://img.shields.io/badge/node.js-%3E%3D20-brightgreen) 
+![pnpm >= 11](https://img.shields.io/badge/pnpm-%3E%3D9-blue) 
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fiyanarmanda%2Ffumika.svg?type=shield&issueType=license)](https://app.fossa.com/projects/git%2Bgithub.com%2Fiyanarmanda%2Ffumika?ref=badge_shield&issueType=license)
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/astro-blog-starter-template)
+A clean, minimalist, and modern, static blog template built with [Astro](https://astro.build). **Fumika** is heavily modified from [Fuwari](https://github.com/saicaca/fuwari).
 
-![Astro Template Preview](https://github.com/withastro/astro/assets/2244813/ff10799f-a816-4703-b967-c78997e8323d)
+[**Live Demo**](https://fumika-demo.netlify.app)
 
-<!-- dash-content-start -->
+**Preview**:
 
-Create a blog with Astro and deploy it on Cloudflare Workers as a [static website](https://developers.cloudflare.com/workers/static-assets/).
+Light Mode:
+![Preview Image Light Mode](https://raw.githubusercontent.com/iyanarmanda/resource/main/fumika/home-light.png)
 
-Features:
+Dark Mode:
+![Preview Image Dark Mode](https://raw.githubusercontent.com/iyanarmanda/resource/main/fumika/home-dark.png)
 
-- ✅ Minimal styling (make it your own!)
-- ✅ 100/100 Lighthouse performance
-- ✅ SEO-friendly with canonical URLs and OpenGraph data
-- ✅ Sitemap support
-- ✅ RSS Feed support
-- ✅ Markdown & MDX support
-- ✅ Built-in Observability logging
+## Tech Stacks
 
-<!-- dash-content-end -->
+- [Astrojs v7](https://astro.build)
+- [Svelte v5](https://svelte.dev/)
+- [Tailwind CSS v4](https://tailwindcss.com) 
+- [SCSS](https://sass-lang.com/)
+
+## Features
+
+- [x] Smooth animations and page transitions
+- [x] Light / dark mode
+- [x] Responsive design
+- [x] Customizable theme, banner, and other components
+- [x] Search functionality with [Pagefind](https://pagefind.app/)
+- [x] [Markdown extended features](https://github.com/iyanarmanda/fumika?tab=readme-ov-file#-markdown-extended-syntax)
+- [x] Table of contents
+- [x] RSS feed
+- [x] Meta and Open Graph Tag
+- [x] i18n translation
+- [x] Comment feature with [Giscus](https://giscus.app/)
+- [x] Google Analytics using [Partytown](https://partytown.qwik.dev/)
+
+*See upcoming features in [ROADMAP](https://github.com/iyanarmanda/fumika/blob/main/ROADMAP.md)
+
+### Markdown Extended Features
+
+In addition to Astro's default support for GitHub Flavored Markdown ([Docs](https://github.github.com/gfm/)), several extra Markdown features are included:
+
+- Admonitions ([Preview and Usage](https://fumika-demo.netlify.app/posts/markdown-extended/#admonitions))
+- GitHub repository cards ([Preview and Usage](https://fumika-demo.netlify.app/posts/markdown-extended/#github-repository-cards))
+- Enhanced code blocks with Expressive Code ([Preview](https://fumika-demo.netlify.app/posts/expressive-code/) / [Docs](https://expressive-code.com/)) 
+- Mermaid Diagram ([Preview](https://fumika-demo.netlify.app/posts/mermaid/) / [Docs](https://mermaid.js.org/))
+- Typography features ([Preview and Usage](https://fumika-demo.netlify.app/posts/markdown-extend/#typography-features))
 
 ## Getting Started
 
-Outside of this repo, you can start a new project with this template using [C3](https://developers.cloudflare.com/pages/get-started/c3/) (the `create-cloudflare` CLI):
+1. Create your blog repository:
+    - [Generate a new repository](https://github.com/iyanarmanda/fumika/generate) from this template or fork this repository.
+    - Or run one of the following commands (*soon*):
+       ```sh
+       npm create fumika@latest
+       yarn create fumika
+       pnpm create fumika@latest
+       bun create fumika@latest
+       deno run -A npm:create-fumika@latest
+       ```
+2. To edit your blog locally, clone your repository, run `pnpm install` to install dependencies.
+    - Install [pnpm](https://pnpm.io) `npm install -g pnpm` if you haven't.
+3. Edit the config file `src/config.ts` to customize your blog.
+4. Run `pnpm new-post <filename>` to create a new post and edit it in `src/content/posts/`.
+5. Deploy your blog to Netlify, GitHub Pages, etc. following [the guides](https://docs.astro.build/en/guides/deploy/). You need to edit the site configuration in `astro.config.mjs` before deployment.
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/astro-blog-starter-template
+## Frontmatter of Posts
+
+```yaml
+---
+title: My First Blog Post
+published: 2023-09-09
+description: This is the first post of my new Astro blog.
+image: ./cover.jpg
+tags: [Foo, Bar]
+category: Front-end
+ogImage: /media/images/cover.webp   # by default is empty and use `image` frontmatter if it from public directories or url.
+draft: false
+---
 ```
 
-A live public deployment of this template is available at [https://astro-blog-starter-template.templates.workers.dev](https://astro-blog-starter-template.templates.workers.dev)
-
-## 🚀 Project Structure
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-The `src/content/` directory contains "collections" of related Markdown and MDX documents. Use `getCollection()` to retrieve posts from `src/content/blog/`, and type-check your frontmatter using an optional schema. See [Astro's Content Collections docs](https://docs.astro.build/en/guides/content-collections/) to learn more.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                           | Action                                           |
-| :-------------------------------- | :----------------------------------------------- |
-| `npm install`                     | Installs dependencies                            |
-| `npm run dev`                     | Starts local dev server at `localhost:4321`      |
-| `npm run build`                   | Build your production site to `./dist/`          |
-| `npm run preview`                 | Preview your build locally, before deploying     |
-| `npm run astro ...`               | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help`         | Get help using the Astro CLI                     |
-| `npm run build && npm run deploy` | Deploy your production site to Cloudflare        |
-| `npm wrangler tail`               | View real-time logs for all Workers              |
+| Command                    | Action                                                                   |
+|:---------------------------|:-------------------------------------------------------------------------|
+| `pnpm install`             | Installs dependencies                                                    |
+| `pnpm dev`                 | Starts local dev server at `localhost:4321`                              |
+| `pnpm build`               | Build your production site to `./dist/`                                  |
+| `pnpm preview`             | Preview your build locally, before deploying                             |
+| `pnpm check`               | Run checks for errors in your code                                       |
+| `pnpm format`              | Format your code using **Biome**                                         |
+| `pnpm lint`                | Lint your code using **Biome**                                           |
+| `pnpm new-post <filename>` | Create a new post                                                        |
+| `pnpm astro ...`           | Run CLI commands like `astro add`, `astro check`                         |
+| `pnpm astro --help`        | Get help using the Astro CLI                                             |
+| `pnpm test`                | Running unit testing using **Vitest**                                    |
 
-## 👀 Want to learn more?
+## License
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+This project is licensed under the MIT License.
 
-## Credit
-
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).

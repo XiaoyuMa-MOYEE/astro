@@ -1,5 +1,4 @@
 # 友链
 		
-编辑 `src/content/data/friends.json` 以添加站点。
-
-您也可以编辑 `src/content/spec/friends.md` 来修改此处的文本。
+感谢中国弧学院对网站开发做出的协助。
+如需添加友链请联系 MOYEE

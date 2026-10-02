@@ -80,7 +80,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Friends,
 		{
 			name: "GitHub",
-			url: "https://github.com/iyanarmanda/fumika",
+			url: "https://github.com/XiaoyuMa-MOYEE",
 			// 外部链接会显示外链图标，并在新标签页中打开。
 			external: true,
 		},
@@ -109,7 +109,7 @@ export const profileConfig: ProfileConfig = {
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/iyanarmanda/fumika",
+			url: "https://github.com/XiaoyuMa-MOYEE",
 		},
 	],
 };

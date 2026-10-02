@@ -128,22 +128,18 @@ export const expressiveCodeConfig: ExpressiveCodeConfig = {
 };
 
 export const commentConfig: CommentConfig = {
-	// 评论由 Giscus 提供。请前往 https://giscus.app/ 为自己的公开仓库生成配置。
-	// 上线前必须替换 repo、repoId、category 和 categoryId，避免评论写入模板仓库。
 	giscus: {
-		repo: "iyanarmanda/fumika",
-		repoId: "R_kgDOTQYphQ",
-		// 若不希望访客直接在 GitHub Discussions 创建新讨论，可选择 Announcements 分类。
+		repo: "XiaoyuMa-MOYEE/astro",
+		repoId: "R_kgDOU2e3FQ",
 		category: "General",
-		categoryId: "DIC_kwDOTQYphc4DBG8B",
-		// 以页面路径作为讨论映射键；部署后不要随意修改文章 URL。
+		categoryId: "DIC_kwDOU2e3Fc4DG4EY",
+
 		mapping: "pathname",
 		strict: "0",
 		reactionsEnabled: "1",
 		emitMetadata: "1",
 		inputPosition: "top",
 		theme: "reactive",
-		// Giscus 的回退界面语言；正常情况下组件会跟随当前中/英文页面自动切换。
 		lang: "zh-CN",
 		loading: "lazy",
 	},
